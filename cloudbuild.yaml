@@ -40,7 +40,7 @@ steps:
   - | 
       if [ $BRANCH_NAME == "main" ]; then
         echo "*************** TERRAFORM APPLY ******************"
-        terraform apply tfplan -input=false -auto-approve
+        terraform apply tfplan
       else
         echo "***************************** SKIPPING APPLYING *******************************"
         echo "Branch '$BRANCH_NAME' does not represent an oficial environment."
