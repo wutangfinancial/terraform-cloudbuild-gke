@@ -17,7 +17,7 @@ steps:
   - |
       echo ""
       echo "*************** TERRAFORM INIT ******************"
-      terraform init || exit 1
+      terraform init -input=false || exit 1
 
 # [START tf-plan]
 - id: 'tf plan'
@@ -28,7 +28,7 @@ steps:
   - | 
       echo ""
       echo "*************** TERRAFORM PLAN ******************"
-      terraform plan -out=terraform.tfplan || exit 1
+      terraform plan -out=tfplan -input=false || exit 1
 # [END tf-plan]
 
 # [START tf-apply]
@@ -40,7 +40,7 @@ steps:
   - | 
       if [ $BRANCH_NAME == "main" ]; then
         echo "*************** TERRAFORM APPLY ******************"
-        terraform apply -auto-approve
+        terraform apply -input=false -auto-approve
       else
         echo "***************************** SKIPPING APPLYING *******************************"
         echo "Branch '$BRANCH_NAME' does not represent an oficial environment."
