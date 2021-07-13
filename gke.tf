@@ -31,7 +31,9 @@ resource "google_container_cluster" "primary" {
 
   network    = google_compute_network.vpc.name
   # subnetwork = google_compute_subnetwork.subnet.name
-}
+
+  enable_shielded_nodes = true
+  
 
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
