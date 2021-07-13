@@ -28,7 +28,7 @@ steps:
   - | 
       echo ""
       echo "*************** TERRAFORM PLAN ******************"
-      terraform plan || exit 1
+      terraform plan -out=terraform.tfplan || exit 1
 # [END tf-plan]
 
 # [START tf-apply]
