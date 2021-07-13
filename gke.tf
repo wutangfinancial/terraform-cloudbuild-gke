@@ -32,8 +32,8 @@ resource "google_container_cluster" "primary" {
   network    = google_compute_network.vpc.name
   # subnetwork = google_compute_subnetwork.subnet.name
 
-#   ip_allocation_policy {}
-#   datapath_provider = "ADVANCED_DATAPATH" 
+  ip_allocation_policy {}
+  datapath_provider = "ADVANCED_DATAPATH" 
 
   enable_shielded_nodes = true
   
