@@ -15,4 +15,18 @@ steps:
   args: 
   - '-c'
   - |
+      echo ""
+      echo "*************** TERRAFORM INIT ******************"
       terraform init || exit 1
+
+# [START tf-plan]
+- id: 'tf plan'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - | 
+      echo ""
+      echo "*************** TERRAFORM PLAN ******************"
+      terraform plan || exit 1
+# [END tf-plan]
